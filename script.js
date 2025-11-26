@@ -1,15 +1,12 @@
+const body = document.querySelector("body");
 const cover = document.querySelector("#cover")
-const presentingArea = document.querySelector("#presentingArea")
+const presentArea = document.querySelector("#presentArea")
 
 
-function roll(){
-    
-}
 
 cover.addEventListener("click", ()=>{
-    cover.classList.add("blur");
+    cover.classList.add("fall");
     setTimeout(() => {
-        presentingArea.classList.add("roll")
-    roll();    
-    }, 2200);
+        presentArea.classList.add("roll")
+    },900);
 });

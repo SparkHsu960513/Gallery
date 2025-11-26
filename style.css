@@ -29,12 +29,11 @@ html, body{
   height: 100%;
   background: #fff;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; 
+  justify-content: center; /* control the main axis( with respect to "flex-direction" )*/ 
+  align-items: center;  /* control the cross axis( which is prependicular to the main axis ) */
   text-align: center;
   font-size: 2rem;
-  /* border: lid #ccc; */
   background-color: #f5faec;
   cursor: pointer;
   position: absolute;
@@ -43,13 +42,15 @@ html, body{
 
 #cover.fall{
     transform-origin: left top;
-    animation: fall 2.2s ease-in-out;
-    transform: translateY(100vh);
+    animation: fall 2.2s ease-in-out forwards;
+    /* transform: translateY(100vh); */
+    z-index: 0;
 }
 
 #cover.blur span{
     transition: 2s ease-in-out;
     filter: blur(30px);
+    z-index: 0;
 }
 
 #cover.blur{
@@ -67,16 +68,43 @@ html, body{
 
 #presentArea{
     position: absolute;
-    x: 0;
-    y: 0;
+    top: 0;
+    left: 0;
     z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    /* overflow: hidden; */
+}
 
+#presentArea span{
+    transition: 2s ease-in-out;
+    width: 0%;
+    opacity: 0;
+    margin-left: 3%;
+    margin-right: 3%;
+    user-select: none;
+    /* cursor: none; */
+}
+
+#presentArea.roll span{
+    background-color: #3255a5;
+    width: 80%;
+    opacity: 100%;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 #background{
     position: absolute;
-    x: 0;
-    y: 0;
+    top: 0;
+    left: 0;
     z-index: 0;
 }
 
