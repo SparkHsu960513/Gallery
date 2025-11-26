@@ -56,6 +56,7 @@ html, body{
 #cover.blur{
     transition: 2s ease-in-out;
     opacity: 0;
+    z-index: 0;
 }
 
 #cover span{
@@ -84,21 +85,43 @@ html, body{
     transition: 2s ease-in-out;
     width: 0%;
     opacity: 0;
-    margin-left: 3%;
-    margin-right: 3%;
     user-select: none;
-    /* cursor: none; */
+
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* align-content: space-between;  */
+    
 }
 
 #presentArea.roll span{
     background-color: #3255a5;
     width: 80%;
     opacity: 100%;
-    margin-left: 3%;
-    margin-right: 3%;
-    display: inline-block;
+    /* display: inline-block; */
     overflow: hidden;
     white-space: nowrap;
+}
+
+span.film::-webkit-scrollbar{
+    display: none;
+}
+#presentArea span.film{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+#presentArea .film .photo{
+    display: flex;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: rgb(207, 234, 154);
+    height: 150px;
 }
 
 #background{
